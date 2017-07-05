@@ -19,8 +19,8 @@
 require_once('./LINEBotTiny.php');
 require_once("./phpMQTT.php");
 
-$channelAccessToken = 'GAgsrdP00sOckjiDTLhRCaNRobKZWgLP4QgpuwFPPvezyw4qSd2B/btQFwME3M2zMKty62lY5fvG6eKZOwo3OhC3X/svuvFpL9evgG18LMN88u1uTObcdav5ufDO/RsuPsgJkQiMFubszWeujrD09AdB04t89/1O/w1cDnyilFU=';
-$channelSecret = '88d2cec7ab1d402bb253dbc450cb6dae';
+$channelAccessToken = '';
+$channelSecret = '';
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
 $mqtt = new phpMQTT("pociremote.com", 1883, "Client".rand());
