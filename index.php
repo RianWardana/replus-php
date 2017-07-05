@@ -23,7 +23,7 @@ $channelAccessToken = '';
 $channelSecret = '';
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
-$mqtt = new phpMQTT("pociremote.com", 1883, "Client".rand());
+$mqtt = new phpMQTT(".com", 9876, "Client".rand());
 
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
@@ -37,7 +37,7 @@ foreach ($client->parseEvents() as $event) {
                     
                     $url = "https://api.wit.ai/message?v=23/05/2017&q=" . $text;
                     $headers = array(
-                        "Authorization: Bearer ZGATIUE2ZTAFQ3IMP2YRBER64NFHYPR5"
+                        "Authorization: Bearer"
                     ); 
 
                     $ch = curl_init();
@@ -62,8 +62,8 @@ foreach ($client->parseEvents() as $event) {
                         if (!empty($location) && !empty($on_off)) {
                             $replyText = "Lamp in " . $location . " is turned " . $on_off;
                             
-                            if ($location == "bedroom") $macId = "66E7";
-                            else if ($location == "garage") $macId = "671";  
+                            if ($location == "bedroom") $macId = "0000";
+                            else if ($location == "garage") $macId = "1111";  
                             else if ($location == "kitchen") $macId = "0001";
                             else if ($location == "living room") $macId = "0002";
                             else if ($location == "toilet") $macId = "0003";
